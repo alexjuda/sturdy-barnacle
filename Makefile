@@ -48,3 +48,8 @@ clean:
 remove: clean
 	$(RM) $(BINDIR)/$(TARGET)
 	@echo "Executable removed!"
+
+
+.PHONY: run
+run:
+	@$(BINDIR)/$(TARGET)
