@@ -1,0 +1,6 @@
+# build dirs
+bin
+obj
+
+# language server cache
+.ccls-cache
