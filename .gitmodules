@@ -1,0 +1,3 @@
+[submodule "vendor/thrust"]
+	path = vendor/thrust
+	url = git@github.com:NVIDIA/thrust.git
