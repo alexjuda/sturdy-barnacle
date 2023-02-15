@@ -10,22 +10,22 @@
 # Name of target file
 TARGET     = main
 
-CXX        = clang++
+# CXX        = clang++
+CXX        = nvcc
 
 CXXFLAGS   = -std=c++20 \
-             -I/usr/local/cuda/include \
-             -Os
+             -I/usr/local/cuda/include
 
-LD         = clang++ -o
-LDFLAGS    = -Wall -pedantic
+LD         = nvcc -o
+LDFLAGS    =
 
 SRCDIR     = src
 OBJDIR     = obj
 BINDIR     = bin
 
-SOURCES   := $(wildcard $(SRCDIR)/*.cpp)
+SOURCES   := $(wildcard $(SRCDIR)/*.cu)
 INCLUDES  := $(wildcard $(SRCDIR)/*.h)
-OBJECTS   := $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+OBJECTS   := $(SOURCES:$(SRCDIR)/%.cu=$(OBJDIR)/%.o)
 
 RM         = rm -f
 
@@ -33,7 +33,7 @@ $(BINDIR)/$(TARGET): $(OBJECTS)
 	$(LD) $@ $(LDFLAGS) $(OBJECTS)
 	@echo "Linking complete!"
 
-$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
+$(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cu
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 	@echo "Compiled "$<" successfully!"
 
