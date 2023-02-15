@@ -1,0 +1,17 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang++",
+      "-std=c++20",
+      "-I/usr/local/cuda/include",
+      "-Os",
+      "-c",
+      "-o",
+      "obj/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/home/alex/Code/cpp/hello-thrust",
+    "file": "/home/alex/Code/cpp/hello-thrust/src/main.cpp",
+    "output": "/home/alex/Code/cpp/hello-thrust/obj/main.o"
+  }
+]
