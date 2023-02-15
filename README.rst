@@ -12,7 +12,10 @@ Basic build:
 
 .. code-block:: bash
 
-    bear -- make
+    make remove
+    make clean
+    make
+    make run
 
 Use the following whenever there's a new source code file:
 
