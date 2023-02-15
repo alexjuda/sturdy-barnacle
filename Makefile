@@ -40,13 +40,8 @@ $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cu
 .PHONY: clean
 clean:
 	$(RM) $(OBJECTS)
-	@echo "Cleanup complete!"
-
-.PHONY: remove
-remove: clean
 	$(RM) $(BINDIR)/$(TARGET)
-	@echo "Executable removed!"
-
+	@echo "Cleanup complete!"
 
 .PHONY: run
 run:
