@@ -11,11 +11,9 @@
 TARGET     = main
 
 CXX        = clang++
-CXXFLAGS   = -std=c++11 \
-             -Weverything -Wall -Wextra -Werror -Wpointer-arith -Wcast-qual \
-             -Wno-missing-braces -Wempty-body -Wno-error=uninitialized \
-             -Wno-error=deprecated-declarations \
-             -pedantic-errors -pedantic \
+
+CXXFLAGS   = -std=c++20 \
+             -I/usr/local/cuda/include \
              -Os
 
 LD         = clang++ -o
